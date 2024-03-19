@@ -28,6 +28,7 @@
     <link href="assets/css/bootsnav.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet">
     <link href="assets/css/responsive.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <!-- ========== End Stylesheet ========== -->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -54,9 +55,9 @@
         <div class="container">
             <div class="row align-center">
                 <div class="col-lg-6 info">
-<!--                    <p>-->
-<!--                        !Global update on Coronavirus disease <a href="#">(COVID-19)</a> Pandemic-->
-<!--                    </p>-->
+                    <p>
+                        Tưng bừng khai trương! Giá chỉ từ <strong>199K</strong> cho mỗi dịch vụ! Áp dụng đến hết ngày 31/3
+                    </p>
 
                 </div>
                 <div class="col-lg-6 text-right item-flex">
@@ -65,9 +66,6 @@
                             <li>
                                 <a href="departments-3.html">Đặt lịch</a>
                             </li>
-<!--                            <li>-->
-<!--                                <a href="#">WebMail</a>-->
-<!--                            </li>-->
                         </ul>
                     </div>
                     <div class="social">
@@ -131,36 +129,17 @@
                     <ul class="nav navbar-nav navbar-center" data-in="#" data-out="#">
                         <li>
                             <a href="index.html" class="dropdown-toggle" data-toggle="dropdown" >Trang chủ</a>
-
-<!--                            <ul class="dropdown-menu">-->
-<!--                                <li><a href="index-1.html">Home Version One</a></li>-->
-<!--                                <li><a href="index-2.html">Home Version Two</a></li>-->
-<!--                                <li><a href="index-3.html">Home Version Three</a></li>-->
-<!--                                <li><a href="index-4.html">Home Version Four</a></li>-->
-<!--                                <li><a href="index-5.html">Home Version Five <span class="badge">New</span></a></li>-->
-<!--                            </ul>-->
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Giới thiệu</a>
                             <ul class="dropdown-menu">
                                 <li><a href="about-us.html">Về chúng tôi</a></li>
                                 <li><a href="contact.html">Liên hệ với chúng tôi</a></li>
-<!--                                <li><a href="404.html">Error Page</a></li>-->
                             </ul>
                         </li>
                         <li class="dropdown">
-                            <a href="departments-3.html"   >Dịch Vụ</a>
-<!--                            <ul class="dropdown-menu">-->
-<!--                                <li><a href="departments-3.html"></a></li>-->
-<!--                            </ul>-->
+                            <a href="departments-3.html"   >Các bệnh điều trị</a>
                         </li>
-<!--                        <li class="dropdown">-->
-<!--                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Doctors</a>-->
-<!--                            <ul class="dropdown-menu">-->
-<!--                                <li><a href="doctors.html">Doctors Version One</a></li>-->
-<!--                                <li><a href="doctors-2.html">Doctors Version Two</a></li>-->
-<!--                            </ul>-->
-<!--                        </li>-->
                         
                         <li>
                             <a href="contact.html">Liên hệ</a>
@@ -199,21 +178,21 @@
                                     <div class="heading">
                                         <h4>ĐẶT LỊCH KHÁM</h4>
                                     </div>
-                                    <form action="#">
+                                    <form id="contact-form">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="name" name="name" placeholder="Tên" type="text">
+                                                    <input required class="form-control" id="name" name="name" placeholder="Tên" type="text">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="phone" name="phone" placeholder="Số điện thoại" type="text">
+                                                    <input required class="form-control" id="phone" name="phone" placeholder="Số điện thoại" type="tel">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <select>
+                                                    <select id="gender">
                                                         <option value="1">Nam</option>
                                                         <option value="2">Nữ</option>
                                                         <option value="3">Khác</option>
@@ -222,7 +201,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <select>
+                                                    <select id="service">
                                                         <option value="1">Thoái hoá cột sống</option>
                                                         <option value="2">Thoát vị đĩa đệm</option>
                                                         <option value="4">Đau thần kinh toạ</option>
@@ -231,14 +210,19 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
+                                            <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="date" name="date" placeholder="Ngày" type="date">
+                                                    <input class="form-control" id="note" name="note" placeholder="Thêm mô tả" type="text">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <input class="form-control" id="time" name="time" placeholder="Time" type="time">
+                                                    <input required class="form-control" id="date" name="date" placeholder="Ngày" type="date">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input required class="form-control" id="time" name="time" placeholder="Time" type="time">
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
@@ -250,6 +234,51 @@
                                     </form>
                                 </div>
                             </div>
+                            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+                            <script type="text/javascript">
+                                (function() {
+                                    // https://dashboard.emailjs.com/admin/account
+                                    emailjs.init({
+                                        privateKey: "G3LG5kxD4XWQmraj0Fami",
+                                        publicKey : "Ej6bsM6ASvec9jjKh",
+                                    });
+                                })();
+                            </script>
+                            <script type="text/javascript">
+                                window.onload = function() {
+                                    document.getElementById('contact-form').addEventListener('submit', function(event) {
+                                        event.preventDefault();
+                                        var serviceID = 'service_dg5ad7c';
+                                        var templateID = 'template_mokc5nf';
+                                        
+                                        var selectedGender = document.getElementById("gender");
+                                        var selectedGenderValue = selectedGender.options[selectedGender.selectedIndex].text;
+
+                                        var selectedService = document.getElementById("service");
+                                        var selectedServiceValue = selectedService.options[selectedService.selectedIndex].text;
+                                        
+                                        var params = {
+                                             senderName : document.getElementById("name").value,
+                                             senderPhone : document.getElementById("phone").value,
+                                            senderGender : selectedGenderValue,
+                                            senderService : selectedServiceValue,
+                                            senderDate : document.getElementById("date").value,
+                                            senderTime : document.getElementById("time").value,
+                                            
+                                        }
+                                            // these IDs from the previous steps
+                                        emailjs.send(serviceID, templateID, params)
+                                            .then(() => {
+                                                alert("Thông tin lịch đặt khám của bạn đã được gửi đi! Chiro Care sẽ sớm liên lạc với bạn. Chiro Care xin cảm ơn!");
+                                                // console.log('SUCCESS!');
+                                            }, (error) => {
+                                                alert("Thông tin lịch đặt khám của bạn đã được gửi đi! Chiro Care sẽ sớm liên lạc với bạn. Chiro Care xin cảm ơn!");
+                                                
+                                                // console.log('FAILED...', error);
+                                            });
+                                    });
+                                }
+                            </script>
                             <div class="col-lg-6 info">
                                 <h2 class="wow fadeInDown" data-wow-duration="1s"><strong> CHIRO CARE</strong> Chăm sóc sức khoẻ cột sống</h2>
                                 <p class="wow fadeInLeft" data-wow-duration="1.5s">
@@ -291,86 +320,7 @@
 
     <!-- Start Features
     ============================================= -->
-<!--    <div class="features-area half-bg bg-gray default-padding bottom-less">-->
-<!--        <div class="container">-->
-<!--            <div class="features-box text-center">-->
-<!--                <div class="row">-->
-<!--                    &lt;!&ndash; Single Item &ndash;&gt;-->
-<!--                    <div class="col-lg-3 col-md-6 single-item">-->
-<!--                        <div class="item">-->
-<!--                            <a href="#">-->
-<!--                                <div class="icon">-->
-<!--                                    <img src="assets/img/icon/5.svg" alt="Icon">-->
-<!--                                </div>-->
-<!--                                <h4>Advanced Care</h4>-->
-<!--                                <ul>-->
-<!--                                    <li>-->
-<!--                                        <span>Phone: </span>-->
-<!--                                        <p>(+987)98765432</p>-->
-<!--                                    </li>-->
-<!--                                </ul>-->
-<!--                            </a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    &lt;!&ndash; End Single Item &ndash;&gt;-->
-<!--                    &lt;!&ndash; Single Item &ndash;&gt;-->
-<!--                    <div class="col-lg-3 col-md-6 single-item">-->
-<!--                        <div class="item">-->
-<!--                            <a href="#">-->
-<!--                                <div class="icon">-->
-<!--                                    <img src="assets/img/icon/6.svg" alt="Icon">-->
-<!--                                </div>-->
-<!--                                <h4>Respite Care</h4>-->
-<!--                                <ul>-->
-<!--                                    <li>-->
-<!--                                        <span>Phone: </span>-->
-<!--                                        <p>(+987)98765432</p>-->
-<!--                                    </li>-->
-<!--                                </ul>-->
-<!--                            </a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    &lt;!&ndash; End Single Item &ndash;&gt;-->
-<!--                    &lt;!&ndash; Single Item &ndash;&gt;-->
-<!--                    <div class="col-lg-3 col-md-6 single-item">-->
-<!--                        <div class="item">-->
-<!--                            <a href="#">-->
-<!--                                <div class="icon">-->
-<!--                                    <img src="assets/img/icon/7.svg" alt="Icon">-->
-<!--                                </div>-->
-<!--                                <h4>Daily Care</h4>-->
-<!--                                <ul>-->
-<!--                                    <li>-->
-<!--                                        <span>Phone: </span>-->
-<!--                                        <p>(+987)98765432</p>-->
-<!--                                    </li>-->
-<!--                                </ul>-->
-<!--                            </a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    &lt;!&ndash; End Single Item &ndash;&gt;-->
-<!--                    &lt;!&ndash; Single Item &ndash;&gt;-->
-<!--                    <div class="col-lg-3 col-md-6 single-item">-->
-<!--                        <div class="item">-->
-<!--                            <a href="#">-->
-<!--                                <div class="icon">-->
-<!--                                    <img src="assets/img/icon/8.svg" alt="Icon">-->
-<!--                                </div>-->
-<!--                                <h4>Neuorology Care</h4>-->
-<!--                                <ul>-->
-<!--                                    <li>-->
-<!--                                        <span>Phone: </span>-->
-<!--                                        <p>(+987)98765432</p>-->
-<!--                                    </li>-->
-<!--                                </ul>-->
-<!--                            </a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    &lt;!&ndash; End Single Item &ndash;&gt;-->
-<!--                </div>  -->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+
     <!-- End Features -->
 
     <!-- Start Choose Us 
@@ -440,11 +390,12 @@
                     <div class="item">
                         <div class="info">
                             <h4>
-                                <a href="#">Thoái hoá cột sống</a>
+                                <a>Thoái hoá cột sống</a>
 
                             </h4>
-                            <div class="icon">
-                                <i class="flaticon-broken-bone"></i>
+                            <div>
+                                <img src="assets/img/departments/thoai-hoa-cot-song-lung.jpg">
+<!--                                <i class="flaticon-broken-bone"></i>-->
                             </div>
                             <p>
                                 Thoái hóa cột sống là hệ quả của quá trình lão hóa của cơ thể trong đó các đĩa đệm bị mất nước, mất tính đàn hồi và xẹp xuống.
@@ -460,10 +411,11 @@
                     <div class="item">
                         <div class="info">
                             <h4>
-                                <a href="#">Thoát vị đĩa đệm</a>
+                                <a>Thoát vị đĩa đệm</a>
                             </h4>
-                            <div class="icon">
-                                <i class="flaticon-elderly"></i>
+                            <div>
+                                <img src="assets/img/departments/thoat-vi-dia-dem-1.jpg">
+                                <!--                                <i class="flaticon-broken-bone"></i>-->
                             </div>
                             <p>
                                 Thoát vị đĩa đệm là tình trạng đĩa đệm bị thoát ra ngoài bao xơ gây ra hiện tượng chèn ép rễ thần kinh hoặc nặng hơn là chèn ép tủy sống.
@@ -479,10 +431,11 @@
                     <div class="item">
                         <div class="info">
                             <h4>
-                                <a href="#">Vẹo cột sống</a>
+                                <a>Vẹo cột sống</a>
                             </h4>
-                            <div class="icon">
-                                <i class="flaticon-oncology"></i>
+                            <div>
+                                <img src="assets/img/departments/trieu-chung-veo-cot-song.jpg">
+                                <!--                                <i class="flaticon-broken-bone"></i>-->
                             </div>
                             <p>
                                 Cong vẹo cột sống (biến dạng cột sống) là tình trạng cột sống bị uốn cong về bên trái hoặc bên phải. 
@@ -499,10 +452,11 @@
                     <div class="item">
                         <div class="info">
                             <h4>
-                                <a href="#">Đau thần kinh toạ</a>
+                                <a>Đau thần kinh toạ</a>
                             </h4>
-                            <div class="icon">
-                                <i class="flaticon-neurology"></i>
+                            <div>
+                                <img src="assets/img/departments/dau-day-than-kinh-toa.jpg">
+                                <!--                                <i class="flaticon-broken-bone"></i>-->
                             </div>
                             <p>
                                 Dây thần kinh tọa là dây thần kinh dày nhất (rộng khoảng 2cm) trong cơ thể, di chuyển ở khoang sau của đùi và chi phối phần chính của chi dưới
@@ -517,10 +471,11 @@
                     <div class="item">
                         <div class="info">
                             <h4>
-                                <a href="#">Hội chứng cơ hình lê</a>
+                                <a>Hội chứng cơ hình lê</a>
                             </h4>
-                            <div class="icon">
-                                <i class="flaticon-ribbon"></i>
+                            <div>
+                                <img src="assets/img/departments/hoi-chung-co-hinh-le.png">
+                                <!--                                <i class="flaticon-broken-bone"></i>-->
                             </div>
                             <p>
                                 Hội chứng cơ hình lê là một tình trạng đau cơ xương khớp, đặc trưng bởi đau mông hoặc hông.
@@ -1034,19 +989,19 @@
                             <h4 class="widget-title">Các bệnh điều trị</h4>
                             <ul>
                                 <li>
-                                    <a href="#">Thoái hoá cột sống</a>
+                                    <a>Thoái hoá cột sống</a>
                                 </li>
                                 <li>
-                                    <a href="#">Thoát vị đĩa đệm</a>
+                                    <a>Thoát vị đĩa đệm</a>
                                 </li>
                                 <li>
-                                    <a href="#">Vẹo cột sống</a>
+                                    <a>Vẹo cột sống</a>
                                 </li>
                                 <li>
-                                    <a href="#">Đau thần kinh toạ</a>
+                                    <a>Đau thần kinh toạ</a>
                                 </li>
                                 <li>
-                                    <a href="#">Hội chứng cơ hình lê</a>
+                                    <a>Hội chứng cơ hình lê</a>
                                 </li>
                             </ul>
                         </div>
@@ -1119,6 +1074,7 @@
                 </div>
             </div>
         </div>
+        
         <!-- End Footer Bottom -->
     </footer>
     <!-- End Footer -->
@@ -1141,6 +1097,7 @@
     <script src="assets/js/bootsnav.js"></script>
     <script src="assets/js/main.js"></script>
 
+    </div>
 </body>
 
 <!-- Mirrored from validthemes.net/site-template/healdi/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 10 Mar 2024 03:24:40 GMT -->

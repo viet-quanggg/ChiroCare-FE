@@ -11,11 +11,10 @@
     <meta name="description" content="Healdi - Medical & Health Template">
 
     <!-- ========== Page Title ========== -->
-    <title>Healdi - Medical & Health Template</title>
+    <title>Chiro Care - Chăm Sóc Sức Khoẻ Cột Sống</title>
 
     <!-- ========== Favicon Icon ========== -->
-    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
-
+    <link rel="shortcut icon" href="assets/img/Chiro%20CareLogo.png" type="image/x-icon">
     <!-- ========== Start Stylesheet ========== -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
@@ -54,19 +53,17 @@
         <div class="container">
             <div class="row align-center">
                 <div class="col-lg-6 info">
-                    <!--                    <p>-->
-                    <!--                        !Global update on Coronavirus disease <a href="#">(COVID-19)</a> Pandemic-->
-                    <!--                    </p>-->
+                    <p>
+                        Tưng bừng khai trương! Giá chỉ từ <strong>199K</strong> cho mỗi dịch vụ! Áp dụng đến hết ngày 31/3
+                    </p>
+
                 </div>
                 <div class="col-lg-6 text-right item-flex">
                     <div class="info">
                         <ul>
                             <li>
-                                <a href="#">Đặt lịch</a>
+                                <a href="departments-3.html">Đặt lịch</a>
                             </li>
-                            <!--                            <li>-->
-                            <!--                                <a href="#">WebMail</a>-->
-                            <!--                            </li>-->
                         </ul>
                     </div>
                     <div class="social">
@@ -77,7 +74,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://maps.app.goo.gl/ddR8xuJnxVvz9QZi7">
+                                <a href="https://maps.app.goo.gl/NDWGmcr1vnmqNtM9A">
                                     <i class="fab fa-google"></i>
                                 </a>
                             </li>
@@ -145,28 +142,7 @@
                         </li>
                         <li class="dropdown">
                             <a href="departments-3.html"   >Dịch Vụ</a>
-                            <!--                            <ul class="dropdown-menu">-->
-                            <!--                                <li><a href="departments-3.html"></a></li>-->
-                            <!--                            </ul>-->
                         </li>
-                        <!--                        <li class="dropdown">-->
-                        <!--                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Doctors</a>-->
-                        <!--                            <ul class="dropdown-menu">-->
-                        <!--                                <li><a href="doctors.html">Doctors Version One</a></li>-->
-                        <!--                                <li><a href="doctors-2.html">Doctors Version Two</a></li>-->
-                        <!--                            </ul>-->
-                        <!--                        </li>-->
-                        <!--                        <li class="dropdown">-->
-                        <!--                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Blog</a>-->
-                        <!--                            <ul class="dropdown-menu">-->
-                        <!--                                <li><a href="blog-standard.html">Blog Standard</a></li>-->
-                        <!--                                <li><a href="blog-with-sidebar.html">Blog With Sidebar</a></li>-->
-                        <!--                                <li><a href="blog-2-colum.html">Blog Grid Two Colum</a></li>-->
-                        <!--                                <li><a href="blog-3-colum.html">Blog Grid Three Colum</a></li>-->
-                        <!--                                <li><a href="blog-single.html">Blog Single</a></li>-->
-                        <!--                                <li><a href="blog-single-with-sidebar.html">Blog Single With Sidebar</a></li>-->
-                        <!--                            </ul>-->
-                        <!--                        </li>-->
                         <li>
                             <a href="contact.html">Liên hệ</a>
                         </li>
@@ -240,21 +216,21 @@
                             <div class="heading">
                                 <h4>Đặt lịch khám</h4>
                             </div>
-                            <form action="#">
+                            <form id="contact-form">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <input class="form-control" id="name" name="name" placeholder="Họ và Tên" type="text">
+                                            <input required class="form-control" id="name" name="name" placeholder="Họ và Tên" type="text">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <input class="form-control" id="phone" name="phone" placeholder="Số điện thoại" type="text">
+                                            <input required class="form-control" id="phone" name="phone" placeholder="Số điện thoại" type="tel">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <select>
+                                            <select id="gender">
                                                 <option value="1">Nam</option>
                                                 <option value="2">Nữ</option>
                                                 <option value="3">Khác</option>
@@ -263,7 +239,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <select>
+                                            <select id="service">
                                                 <option value="1">Thoái hoá cột sống</option>
                                                 <option value="2">Thoát vị đĩa đệm</option>
                                                 <option value="4">Đau thần kinh toạ</option>
@@ -274,17 +250,17 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <input class="form-control" id="note" name="note" placeholder="Thêm mô tả" type="text">
+                                            <input  class="form-control" id="note" name="note" placeholder="Thêm mô tả" type="text">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input class="form-control" id="date" type="date" name="date" placeholder="Ngày khám" type="text">
+                                            <input required class="form-control" id="date" type="date" name="date" placeholder="Ngày khám" type="text">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input class="form-control" id="time" name="time" type="time" placeholder="Thời gian" type="text">
+                                            <input required class="form-control" id="time" name="time" type="time" placeholder="Thời gian" type="text">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -300,6 +276,53 @@
             </div>
         </div>
 
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function() {
+                // https://dashboard.emailjs.com/admin/account
+                emailjs.init({
+                    privateKey: "G3LG5kxD4XWQmraj0Fami",
+                    publicKey : "Ej6bsM6ASvec9jjKh",
+                });
+            })();
+        </script>
+        <script type="text/javascript">
+            window.onload = function() {
+                document.getElementById('contact-form').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    var serviceID = 'service_dg5ad7c';
+                    var templateID = 'template_mokc5nf';
+
+                    var selectedGender = document.getElementById("gender");
+                    var selectedGenderValue = selectedGender.options[selectedGender.selectedIndex].text;
+
+                    var selectedService = document.getElementById("service");
+                    var selectedServiceValue = selectedService.options[selectedService.selectedIndex].text;
+
+                    var params = {
+                        senderName : document.getElementById("name").value,
+                        senderPhone : document.getElementById("phone").value,
+                        senderGender : selectedGenderValue,
+                        senderService : selectedServiceValue,
+                        senderNote : document.getElementById("note").value,
+                        senderDate : document.getElementById("date").value,
+                        senderTime : document.getElementById("time").value,
+
+                    }
+                    // these IDs from the previous steps
+                    emailjs.send(serviceID, templateID, params)
+                        .then(() => {
+                            alert("Thông tin lịch đặt khám của bạn đã được gửi đi! Chiro Care sẽ sớm liên lạc với bạn. Chiro Care xin cảm ơn!");
+                            // console.log('SUCCESS!');
+                        }, (error) => {
+                            alert("Thông tin lịch đặt khám của bạn đã được gửi đi! Chiro Care sẽ sớm liên lạc với bạn. Chiro Care xin cảm ơn!");
+
+                            // console.log('FAILED...', error);
+                        });
+                });
+            }
+        </script>
+
         <hr/>
         <div class="container">
             <div class="item-box text-center">
@@ -311,8 +334,9 @@
                                 <h4>
                                     <a href="#">Thoái hoá cột sống</a>
                                 </h4>
-                                <div class="icon">
-                                    <i class="flaticon-broken-bone"></i>
+                                <div>
+                                    <img src="assets/img/departments/thoai-hoa-cot-song-lung.jpg">
+                                    <!--                                <i class="flaticon-broken-bone"></i>-->
                                 </div>
                                 <p>
                                     Thoái hóa cột sống là hệ quả của quá trình lão hóa của cơ thể trong đó các đĩa đệm bị mất nước, mất tính đàn hồi và xẹp xuống.
@@ -328,8 +352,9 @@
                                 <h4>
                                     <a href="#">Thoát vị đĩa đệm</a>
                                 </h4>
-                                <div class="icon">
-                                    <i class="flaticon-tooth-1"></i>
+                                <div>
+                                    <img src="assets/img/departments/thoat-vi-dia-dem-1.jpg">
+                                    <!--                                <i class="flaticon-broken-bone"></i>-->
                                 </div>
                                 <p>
                                     Thoát vị đĩa đệm là tình trạng đĩa đệm bị thoát ra ngoài bao xơ gây ra hiện tượng chèn ép rễ thần kinh hoặc nặng hơn là chèn ép tủy sống.
@@ -346,8 +371,9 @@
                                 <h4>
                                     <a href="#">Vẹo cột sống</a>
                                 </h4>
-                                <div class="icon">
-                                    <i class="flaticon-ophtalmology"></i>
+                                <div>
+                                    <img src="assets/img/departments/trieu-chung-veo-cot-song.jpg">
+                                    <!--                                <i class="flaticon-broken-bone"></i>-->
                                 </div>
                                 <p>
                                     Cong vẹo cột sống (biến dạng cột sống) là tình trạng cột sống bị uốn cong về bên trái hoặc bên phải.
@@ -364,8 +390,9 @@
                                 <h4>
                                     <a href="#">Đau thần kinh toạ</a>
                                 </h4>
-                                <div class="icon">
-                                    <i class="flaticon-blood"></i>
+                                <div>
+                                    <img src="assets/img/departments/dau-day-than-kinh-toa.jpg">
+                                    <!--                                <i class="flaticon-broken-bone"></i>-->
                                 </div>
                                 <p>
                                     Dây thần kinh tọa là dây thần kinh dày nhất (rộng khoảng 2cm) trong cơ thể, di chuyển ở khoang sau của đùi và chi phối phần chính của chi dưới
@@ -382,8 +409,9 @@
                                 <h4>
                                     <a href="#">Hội chứng cơ hình lê</a>
                                 </h4>
-                                <div class="icon">
-                                    <i class="flaticon-neurology"></i>
+                                <div>
+                                    <img src="assets/img/departments/hoi-chung-co-hinh-le.png">
+                                    <!--                                <i class="flaticon-broken-bone"></i>-->
                                 </div>
                                 <p>
                                     Hội chứng cơ hình lê là một tình trạng đau cơ xương khớp, đặc trưng bởi đau mông hoặc hông.
@@ -400,8 +428,9 @@
                                 <h4>
                                     <a href="#">Các bệnh đau xương khớp khác</a>
                                 </h4>
-                                <div class="icon">
-                                    <i class="flaticon-coronavirus"></i>
+                                <div>
+                                    <img src="assets/img/departments/dau-nhuc-xuong-khop-o-nguoi-tre.jpg">
+                                    <!--                                <i class="flaticon-broken-bone"></i>-->
                                 </div>
                                 <p>
                                     Tại Chiro Care, chúng tôi luôn sẵn sàng tiếp nhận những trường hợp đau xương khớp.

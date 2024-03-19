@@ -54,9 +54,9 @@
         <div class="container">
             <div class="row align-center">
                 <div class="col-lg-6 info">
-                    <!--                    <p>-->
-                    <!--                        !Global update on Coronavirus disease <a href="#">(COVID-19)</a> Pandemic-->
-                    <!--                    </p>-->
+                                        <p>
+Tưng bừng khai trương! Giá chỉ từ <strong>199K</strong> cho mỗi dịch vụ! Áp dụng đến hết ngày 31/3
+                                        </p>
 
                 </div>
                 <div class="col-lg-6 text-right item-flex">
@@ -65,9 +65,6 @@
                             <li>
                                 <a href="departments-3.html">Đặt lịch</a>
                             </li>
-                            <!--                            <li>-->
-                            <!--                                <a href="#">WebMail</a>-->
-                            <!--                            </li>-->
                         </ul>
                     </div>
                     <div class="social">
@@ -148,17 +145,9 @@
                         </li>
                         <li class="dropdown">
                             <a href="departments-3.html"   >Dịch Vụ</a>
-                            <!--                            <ul class="dropdown-menu">-->
-                            <!--                                <li><a href="departments-3.html"></a></li>-->
-                            <!--                            </ul>-->
+
                         </li>
-                        <!--                        <li class="dropdown">-->
-                        <!--                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Doctors</a>-->
-                        <!--                            <ul class="dropdown-menu">-->
-                        <!--                                <li><a href="doctors.html">Doctors Version One</a></li>-->
-                        <!--                                <li><a href="doctors-2.html">Doctors Version Two</a></li>-->
-                        <!--                            </ul>-->
-                        <!--                        </li>-->
+
 
                         <li>
                             <a href="contact.html">Liên hệ</a>
@@ -217,11 +206,11 @@
 
                     <div class="col-lg-5 wow fadeInLeft contact-form-box">
                         <h2>Cần giải đáp ? <strong>Hãy gửi thông tin đến chúng tôi</strong></h2>
-                        <form action="https://validthemes.net/site-template/healdi/assets/mail/contact.php" method="POST" class="contact-form">
+                        <form id="contact-form"  class="contact-form">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <input class="form-control" id="name" name="name" placeholder="Tên của bạn" type="text">
+                                        <input required class="form-control" id="name" name="name" placeholder="Tên của bạn" type="text">
                                         <span class="alert-error"></span>
                                     </div>
                                 </div>
@@ -233,23 +222,19 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <input class="form-control" id="phone" name="phone" placeholder="Số điện thoại" type="text">
+                                        <input required class="form-control" id="phone" name="phone" placeholder="Số điện thoại" type="text">
                                         <span class="alert-error"></span>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group comments">
-                                        <textarea class="form-control" id="comments" name="comments" placeholder="Bạn đang thắc mắc điều gì ? *"></textarea>
+                                        <textarea required class="form-control" id="content" name="comments" placeholder="Bạn đang thắc mắc điều gì ? *"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <button type="submit" name="submit" id="submit">
                                         Gửi ngay
                                     </button>
-                                </div>
-                                <!-- Alert Message -->
-                                <div class="col-lg-12 alert-notification">
-                                    <div id="message" class="alert-msg"></div>
                                 </div>
                             </div>
                         </form>
@@ -259,6 +244,43 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+                privateKey: "G3LG5kxD4XWQmraj0Fami",
+                publicKey : "Ej6bsM6ASvec9jjKh",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                var serviceID = 'service_dg5ad7c';
+                var templateID = 'template_jkscdoq';
+
+                var params = {
+                    senderName : document.getElementById("name").value,
+                    senderEmail : document.getElementById("email").value,
+                    senderPhone : document.getElementById("phone").value,
+                    senderContent : document.getElementById("content").value,
+
+                }
+                // these IDs from the previous steps
+                emailjs.send(serviceID, templateID, params)
+                    .then(() => {
+                        alert("Thông tin của bạn đã được gửi đi! Chiro Care sẽ sớm liên lạc với bạn. Chiro Care xin cảm ơn!");
+                        console.log('SUCCESS!');
+                    }, (error) => {
+                        console.log(error);
+                        // alert("Thông tin lịch đặt khám của bạn đã được gửi đi! Chiro Care sẽ sớm liên lạc với bạn. Chiro Care xin cảm ơn!");
+                    });
+            });
+        }
+    </script>
     <!-- End Contact -->
 
     <!-- Start Google Maps 
@@ -310,19 +332,19 @@
                             <h4 class="widget-title">Các bệnh điều trị</h4>
                             <ul>
                                 <li>
-                                    <a href="#">Thoái hoá cột sống</a>
+                                    <a >Thoái hoá cột sống</a>
                                 </li>
                                 <li>
-                                    <a href="#">Thoát vị đĩa đệm</a>
+                                    <a>Thoát vị đĩa đệm</a>
                                 </li>
                                 <li>
-                                    <a href="#">Vẹo cột sống</a>
+                                    <a >Vẹo cột sống</a>
                                 </li>
                                 <li>
-                                    <a href="#">Đau thần kinh toạ</a>
+                                    <a>Đau thần kinh toạ</a>
                                 </li>
                                 <li>
-                                    <a href="#">Hội chứng cơ hình lê</a>
+                                    <a >Hội chứng cơ hình lê</a>
                                 </li>
                             </ul>
                         </div>
